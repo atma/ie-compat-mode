@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Testing IE Compatibility Mode</title>
+</head>
+<body>
+<div id="result"></div>
+<script type="text/javascript">
+(function(){
+var ua = navigator.userAgent;
+var isIE = ua.indexOf("MSIE") != -1;
+var isCompat = ua.indexOf("compatible") != -1;
+var ieRegex = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+var result = document.getElementById('result');
+var matches = ieRegex.exec(ua);
+
+if (isIE) {
+  if (isCompat) {
+    result.innerHTML = "Compatibility Mode (IE" + matches[1] + " emulation)";
+  } else {
+    result.innerHTML = "IE" + matches[1] + " not Compatibility Mode";
+  }
+} else {
+  result.innerHTML = "Not IE";
+}
+})();
+</script>
+</body>
+</html>
+
