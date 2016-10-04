@@ -18,7 +18,7 @@ if (isIE) {
   if (isCompat) {
     result.innerHTML = "Compatibility Mode (IE" + matches[1] + " emulation)";
   } else {
-    result.innerHTML = "IE" + matches[1] + " not Compatibility Mode";
+    result.innerHTML = "IE " + ua + " (not in Compatibility Mode)";
   }
 } else {
   result.innerHTML = "Not IE";
